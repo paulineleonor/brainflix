@@ -1,0 +1,47 @@
+@use "../../styles/partials/variables" as *;
+
+.header {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.6rem;
+
+  &__wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__search {
+    background-color: $brand-secondary-3;
+    border-radius: 5px;
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+  }
+  &__avatar {
+    height: 3rem;
+    width: 3rem;
+    border-radius: 50%;
+  }
+
+  &__input {
+    all: unset;
+  }
+}
+
+.button {
+  display: flex;
+  background-color: $brand-primary-2;
+  width: 100%;
+  border-radius: 5px;
+  text-decoration: none;
+  text-transform: uppercase;
+  text-align: center;
+
+  &__copy {
+    color: $brand-primary-4;
+    width: 100%;
+  }
+}
