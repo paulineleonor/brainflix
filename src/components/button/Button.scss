@@ -1,0 +1,24 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.button {
+  all: unset;
+  display: flex;
+  background-color: $brand-primary-2;
+  background-image: url("../../assets/Icons/upload.svg");
+  background-position: 3% 50%;
+  background-repeat: no-repeat;
+  height: 4rem;
+  width: 100%;
+  border-radius: 5px;
+  color: white;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  @include labels-buttons;
+
+  @include tablet {
+    padding: 0 3.2rem;
+    width: 15rem;
+  }
+}

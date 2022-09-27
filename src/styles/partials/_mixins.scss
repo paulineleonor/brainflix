@@ -17,3 +17,45 @@
     @content;
   }
 }
+
+@mixin header-desktop {
+  font-size: 3.3rem;
+  line-height: 4.4rem;
+  font-weight: bold;
+}
+
+@mixin header-mobile {
+  font-size: 2.4rem;
+  line-height: 3.2rem;
+  font-weight: bold;
+}
+
+@mixin section-header {
+  font-size: 1.2rem;
+  line-height: 2rem;
+  font-weight: bold;
+}
+
+@mixin subheader-desktop {
+  font-size: 1.4rem;
+  line-height: 2.2rem;
+  font-weight: bold;
+}
+
+@mixin subheader-copy-mobile {
+  font-size: 1.3rem;
+  line-height: 1.8rem;
+  font-weight: bold;
+}
+
+@mixin copy-desktop {
+  font-size: 1.4rem;
+  line-height: 2.2rem;
+  font-weight: normal;
+}
+
+@mixin labels-buttons {
+  font-size: 1.2rem;
+  line-height: 2rem;
+  font-weight: normal;
+}
