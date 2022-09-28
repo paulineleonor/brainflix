@@ -1,4 +1,6 @@
 @use "./typography";
+@use "./mixins" as *;
+@use "./variables" as *;
 
 *,
 *::before,

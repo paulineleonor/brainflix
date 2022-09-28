@@ -1,0 +1,20 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.video {
+  &__container {
+    background-color: $brand-secondary-1;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+  &__image {
+    width: 100%;
+    max-width: $desktop-max-width;
+    height: 50vh;
+
+    @include desktop {
+      margin: 0 auto;
+    }
+  }
+}
