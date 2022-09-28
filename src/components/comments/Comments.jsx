@@ -1,7 +1,7 @@
 import React from "react";
 
 function Comments(props) {
-  const comments = props.videoDetails[0].comments;
+  const comments = props.video.comments;
   console.log(comments);
   return (
     <section className="comments">
