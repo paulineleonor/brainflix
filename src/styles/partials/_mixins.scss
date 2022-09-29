@@ -27,7 +27,8 @@
 @mixin header-mobile {
   font-size: 2.4rem;
   line-height: 3.2rem;
-  font-weight: bold;
+  font-weight: 700;
+  padding-bottom: 2.4rem;
 }
 
 @mixin section-header {
@@ -42,10 +43,16 @@
   font-weight: bold;
 }
 
-@mixin subheader-copy-mobile {
+@mixin subheader-mobile {
   font-size: 1.3rem;
   line-height: 1.8rem;
   font-weight: bold;
+}
+
+@mixin copy-mobile {
+  font-size: 1.3rem;
+  line-height: 1.8rem;
+  font-weight: normal;
 }
 
 @mixin copy-desktop {
@@ -58,4 +65,17 @@
   font-size: 1.2rem;
   line-height: 2rem;
   font-weight: 700;
+}
+
+@mixin avatar {
+  height: 3.6rem;
+  width: 3.6rem;
+  background-size: cover;
+  background-position: 20% 50%;
+  border-radius: 50%;
+
+  @include tablet {
+    height: 4rem;
+    width: 4rem;
+  }
 }

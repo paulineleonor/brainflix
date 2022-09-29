@@ -7,11 +7,15 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
+
+    @include tablet {
+      padding: 0 3.6rem;
+    }
   }
+
   &__image {
     width: 100%;
     max-width: $desktop-max-width;
-    height: 50vh;
 
     @include desktop {
       margin: 0 auto;

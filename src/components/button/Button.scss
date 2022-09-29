@@ -5,7 +5,6 @@
   all: unset;
   display: flex;
   background-color: $brand-primary-2;
-  background-image: url("../../assets/Icons/upload.svg");
   background-position: 3% 50%;
   background-repeat: no-repeat;
   height: 4rem;
@@ -20,5 +19,13 @@
   @include tablet {
     padding: 0 3.2rem;
     width: 15rem;
+  }
+
+  &--comment {
+    background-image: url("../../assets/Icons/add_comment.svg");
+  }
+
+  &--search {
+    background-image: url("../../assets/Icons/upload.svg");
   }
 }

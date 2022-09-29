@@ -1,12 +1,14 @@
 import React from "react";
+import Button from "../button/Button";
+import "./Form.scss";
 
 function Form() {
   return (
-    <article className="conversation__wrapper">
-      <div className="conversation__icon">
-        <div className="conversation__photo"></div>
-      </div>
-      <div className="form">
+    <div className="form">
+      <article className="form__wrapper">
+        <div className="form__icon">
+          <div className="form__photo"></div>
+        </div>
         <form className="form__inner">
           <label htmlFor="comment" className="form__label">
             Join the conversation
@@ -15,16 +17,17 @@ function Form() {
             id="comment"
             name="comment"
             placeholder="Add a new comment"
-            className="form__input form__input--height"
+            className="form__input"
           ></textarea>
-          <div className="form__wrapper">
-            <button type="submit" className="form__button">
-              Comment
-            </button>
+          <div className="form__button">
+            <Button
+              buttonAction="Comment"
+              buttonClass="button button--comment"
+            />
           </div>
         </form>
-      </div>
-    </article>
+      </article>
+    </div>
   );
 }
 

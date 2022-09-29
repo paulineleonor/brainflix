@@ -2,7 +2,23 @@
 @use "../../styles/partials/mixins" as *;
 
 .sidebar {
+  cursor: pointer;
+  padding: 1.6rem;
+
+  &__container {
+    width: 10rem;
+    height: 6rem;
+    // width: 8rem;
+  }
+
   &__image {
-    height: 5rem;
+    object-fit: cover;
+    height: inherit;
+    width: inherit;
+    border-radius: 4px;
+  }
+
+  &__video {
+    display: flex;
   }
 }

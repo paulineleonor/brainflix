@@ -1,8 +1,7 @@
-import UploadIcon from "../../assets/Icons/upload.svg";
 import "./Button.scss";
 
-const Button = () => {
-  return <button className="button">Upload</button>;
+const Button = (props) => {
+  return <button className={props.buttonClass}>{props.buttonAction}</button>;
 };
 
 export default Button;

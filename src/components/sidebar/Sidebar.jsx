@@ -9,18 +9,17 @@ function Sidebar(props) {
   console.log(filteredVideos);
 
   return (
-    <div className="side-profiles">
-      <ul>
-        {filteredVideos.map((video) => {
-          return (
-            <SideBarVideo
-              key={video.id}
-              video={video}
-              sidebarClickHandler={props.sidebarClickHandler}
-            />
-          );
-        })}
-      </ul>
+    <div className="sidebar">
+      <p className="sidebar__title">Next videos</p>
+      {filteredVideos.map((video) => {
+        return (
+          <SideBarVideo
+            key={video.id}
+            video={video}
+            sidebarClickHandler={props.sidebarClickHandler}
+          />
+        );
+      })}
     </div>
   );
 }

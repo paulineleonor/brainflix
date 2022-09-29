@@ -1,0 +1,74 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.comments {
+  padding: 0 1.6rem;
+  &__wrapper {
+    // padding: 0 1.6rem;
+    border-top: 1px solid $brand-secondary-3;
+  }
+}
+
+.comment {
+  display: flex;
+  width: 100%;
+  border-bottom: 1px solid $brand-secondary-3;
+  padding: 1.6rem 0;
+
+  @include tablet {
+    padding: 2.4rem 0;
+  }
+
+  //   &__wrapper {
+  //     padding: 0 1.6rem;
+  //   }
+  &__img {
+    height: 4.8rem;
+    width: 4.8rem;
+    background-color: $brand-secondary-3;
+    border-radius: 50%;
+    margin-right: 1.6rem;
+  }
+
+  &__user {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 0.8rem;
+  }
+
+  &__name {
+    font-weight: 600;
+  }
+
+  &__date {
+    color: $brand-primary-3;
+  }
+
+  &__text {
+    @include tablet {
+      line-height: 2.4rem;
+    }
+  }
+
+  &__wrapper {
+    width: 100%;
+  }
+
+  &__buttons {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &__image {
+    height: 1.6rem;
+
+    &--margin {
+      margin-right: 1rem;
+    }
+  }
+
+  &__count {
+    margin-right: 0.3rem;
+  }
+}

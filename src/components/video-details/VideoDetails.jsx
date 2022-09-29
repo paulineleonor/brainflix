@@ -1,7 +1,9 @@
 import React from "react";
 import ViewsIcon from "../../assets/Icons/views.svg";
 import LikeIcon from "../../assets/Icons/likes.svg";
-import convertDate from "../../utils/helper.mjs";
+import { convertDate } from "../../utils/date.mjs";
+import Button from "../button/Button";
+import "./VideoDetails.scss";
 
 function VideoDetails(props) {
   const { title, channel, timestamp, likes, views, description, comments } =
@@ -19,18 +21,18 @@ function VideoDetails(props) {
             <p className="videoDetails__date">{date}</p>
           </div>
           <div className="videoDetails__wrapper">
-            <div className="views">
-              <img src={ViewsIcon} alt="" className="views__icon" />
-              <p className="views__count">{views}</p>
+            <div className="videoDetails__metrics">
+              <img src={ViewsIcon} alt="" className="videoDetails__icon" />
+              <p className="videoDetails__number">{views}</p>
             </div>
-            <div className="likes">
-              <img src={LikeIcon} alt="" className="likes__icon" />
-              <p className="likes__count">{likes}</p>
+            <div className="videoDetails__metrics">
+              <img src={LikeIcon} alt="" className="videoDetails__icon" />
+              <p className="videoDetails__number">{likes}</p>
             </div>
           </div>
         </div>
         <p className="videoDetails__description">{description}</p>
-        <p className="videoDetails__description">{comments.length} Comments</p>
+        <p className="videoDetails__comments">{comments.length} Comments</p>
       </div>
     </section>
   );

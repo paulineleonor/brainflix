@@ -7,7 +7,7 @@ const VideoContent = (props) => {
   return (
     <section className="video">
       <div className="video__container">
-        <img src={video.image} alt="" className="video__image" />
+        <video poster={video.image} controls className="video__image"></video>
       </div>
 
       <VideoDetails video={video} />

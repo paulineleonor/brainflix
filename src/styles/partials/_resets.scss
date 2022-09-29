@@ -18,3 +18,12 @@ body {
   font-size: 1.6rem;
   font-family: "AvenirNext";
 }
+
+// h1 {
+//   @include header-mobile;
+//   font-weight: 700;
+// }
+
+p {
+  @include copy-mobile;
+}

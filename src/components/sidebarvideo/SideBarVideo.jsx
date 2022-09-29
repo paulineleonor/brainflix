@@ -7,15 +7,12 @@ const SideBarVideo = (props) => {
       onClick={() => {
         props.sidebarClickHandler(props.video.id);
       }}
-      className="sidebar"
+      className="sidebar__video"
     >
-      <img
-        src={props.video.image}
-        alt={props.video.title}
-        className="sidebar__image"
-      />
+      <div className="sidebar__container">
+        <img src={props.video.image} alt="" className="sidebar__image" />
+      </div>
       <div className="sidebar__wrapper">
-        {" "}
         <p className="sidebar__name">{props.video.title}</p>
         <p className="sidebar__name">{props.video.channel}</p>
       </div>
