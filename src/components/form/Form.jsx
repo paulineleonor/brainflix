@@ -10,9 +10,7 @@ function Form() {
           <div className="form__photo"></div>
         </div>
         <form className="form__inner">
-          <label htmlFor="comment" className="form__label">
-            Join the conversation
-          </label>
+          <h2 className="form__label">Join the conversation</h2>
           <textarea
             id="comment"
             name="comment"

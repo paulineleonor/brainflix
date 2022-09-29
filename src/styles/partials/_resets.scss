@@ -19,10 +19,18 @@ body {
   font-family: "AvenirNext";
 }
 
-// h1 {
-//   @include header-mobile;
-//   font-weight: 700;
-// }
+h1 {
+  @include header-mobile;
+  font-weight: 600;
+}
+
+h2 {
+  text-transform: uppercase;
+  color: $brand-primary-3;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.6rem;
+}
 
 p {
   @include copy-mobile;

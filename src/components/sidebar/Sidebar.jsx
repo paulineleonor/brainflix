@@ -1,6 +1,6 @@
 import React from "react";
 import SideBarVideo from "../sidebarvideo/SideBarVideo";
-import { useState } from "react";
+import "./Sidebar.scss";
 
 function Sidebar(props) {
   const filteredVideos = props.videos.filter(
@@ -10,7 +10,7 @@ function Sidebar(props) {
 
   return (
     <div className="sidebar">
-      <p className="sidebar__title">Next videos</p>
+      <h2 className="sidebar__title">Next videos</h2>
       {filteredVideos.map((video) => {
         return (
           <SideBarVideo

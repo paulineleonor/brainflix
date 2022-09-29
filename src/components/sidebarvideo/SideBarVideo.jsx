@@ -14,7 +14,7 @@ const SideBarVideo = (props) => {
       </div>
       <div className="sidebar__wrapper">
         <p className="sidebar__name">{props.video.title}</p>
-        <p className="sidebar__name">{props.video.channel}</p>
+        <p className="sidebar__channel">{props.video.channel}</p>
       </div>
     </article>
   );
