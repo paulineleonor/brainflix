@@ -6,6 +6,12 @@ import { dynamicTimestamp } from "../../utils/date.mjs";
 function Comments(props) {
   const comments = props.video.comments;
 
+  // const applyClass = (index) => {
+  //   if (index === comments.length -1) {
+
+  //   }
+  // }
+
   const commentsList = comments.map((comment, i) => (
     <article className="comment" key={i}>
       <Avatar

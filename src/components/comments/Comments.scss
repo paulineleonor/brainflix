@@ -7,6 +7,10 @@
   @include tablet {
     padding: 0 3.6rem;
   }
+  @include desktop {
+    padding: 0;
+  }
+
   &__wrapper {
     border-top: 1px solid $brand-secondary-3;
   }
@@ -20,6 +24,12 @@
 
   @include tablet {
     padding: 2.4rem 0;
+  }
+
+  &:last-child {
+    @include desktop {
+      border: none;
+    }
   }
 
   &__user {
@@ -45,6 +55,10 @@
 
   &__wrapper {
     width: 100%;
+
+    @include desktop {
+      padding-right: 2.4rem;
+    }
   }
 
   &__buttons {
