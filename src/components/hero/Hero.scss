@@ -9,7 +9,7 @@
     flex-direction: column;
 
     @include tablet {
-      padding: 0 3.6rem;
+      padding: 0 $standard-spacing-desktop;
     }
   }
 

@@ -2,21 +2,23 @@
 @use "../../styles/partials/mixins" as *;
 
 .sidebar {
-  padding: 1.6rem 1.6rem 0 1.6rem;
+  padding: $standard-spacing-mobile $standard-spacing-mobile 0
+    $standard-spacing-mobile;
 
   @include tablet {
-    padding: 2.4rem 3.6rem 0 3.6rem;
+    padding: $gutter-desktop $standard-spacing-desktop 0
+      $standard-spacing-desktop;
   }
 
   @include desktop {
-    padding: 3.6rem 0 0 2.4rem;
+    padding: $standard-spacing-desktop 0 0 $gutter-desktop;
     border-left: 1px solid $brand-secondary-3;
   }
   &__title {
-    margin-bottom: 1.6rem;
+    margin-bottom: $standard-spacing-mobile;
 
     @include tablet {
-      margin-bottom: 2.4rem;
+      margin-bottom: $gutter-desktop;
     }
   }
 }

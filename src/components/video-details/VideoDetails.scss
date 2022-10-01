@@ -2,21 +2,22 @@
 @use "../../styles/partials/mixins" as *;
 
 .videoDetails {
-  padding: 1.6rem;
+  padding: $standard-spacing-mobile;
 
   @include tablet {
-    padding: 3.6rem 3.6rem 1.6rem 3.6rem;
+    padding: $standard-spacing-desktop $standard-spacing-desktop
+      $standard-spacing-mobile $standard-spacing-desktop;
   }
 
   @include desktop {
-    padding: 3.6rem 0 1.6rem 0;
+    padding: $standard-spacing-desktop 0 $standard-spacing-mobile 0;
   }
 
   &__title {
-    padding: 0.8rem 0 1.6rem 0;
+    padding: 0.8rem 0 $standard-spacing-mobile 0;
 
     @include tablet {
-      padding: 0 0 1.6rem 0;
+      padding: 0 0 $standard-spacing-mobile 0;
     }
   }
 
@@ -25,8 +26,8 @@
     border-bottom: 1px solid $brand-secondary-3;
     display: flex;
     justify-content: space-between;
-    padding-top: 1.6rem;
-    margin-bottom: 1.6rem;
+    padding-top: $standard-spacing-mobile;
+    margin-bottom: $standard-spacing-mobile;
 
     @include tablet {
       border-top: none;
@@ -47,7 +48,7 @@
       }
 
       @include desktop {
-        margin-right: 2.4rem;
+        margin-right: $gutter-desktop;
       }
     }
   }
@@ -56,20 +57,20 @@
 
     &--left {
       @include tablet {
-        margin-right: 3.6rem;
+        margin-right: $standard-spacing-desktop;
       }
     }
   }
   &__channel {
     font-weight: 600;
-    margin-bottom: 1.6rem;
+    margin-bottom: $standard-spacing-mobile;
     @include tablet {
-      margin-right: 3.6rem;
+      margin-right: $standard-spacing-desktop;
       margin-bottom: 0.8rem;
     }
   }
   &__date {
-    margin-bottom: 1.6rem;
+    margin-bottom: $standard-spacing-mobile;
     color: $brand-primary-3;
     @include tablet {
       margin-bottom: 0.8rem;
@@ -78,7 +79,7 @@
 
   &__metrics {
     color: $brand-primary-3;
-    margin-bottom: 1.6rem;
+    margin-bottom: $standard-spacing-mobile;
     @include tablet {
       margin-bottom: 0.8rem;
     }
@@ -89,14 +90,14 @@
   }
 
   &__description {
-    margin-bottom: 1.6rem;
+    margin-bottom: $standard-spacing-mobile;
 
     @include tablet {
-      margin-bottom: 2.4rem;
+      margin-bottom: $gutter-desktop;
     }
 
     @include desktop {
-      margin-right: 2.4rem;
+      margin-right: $gutter-desktop;
     }
   }
 
@@ -106,7 +107,7 @@
 
   &__views {
     @include tablet {
-      margin-right: 3.6rem;
+      margin-right: $standard-spacing-desktop;
     }
   }
 }
