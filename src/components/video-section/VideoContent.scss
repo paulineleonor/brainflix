@@ -15,10 +15,10 @@
 
   &__image {
     width: 100%;
-    max-width: $desktop-max-width;
+    margin: 0 auto;
 
     @include desktop {
-      margin: 0 auto;
+      max-width: $desktop-max-width;
     }
   }
 }

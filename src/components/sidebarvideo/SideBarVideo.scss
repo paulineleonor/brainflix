@@ -4,6 +4,10 @@
 .sidebar {
   &__video {
     margin-bottom: 1.6rem;
+
+    @include tablet {
+      margin-bottom: 2.4rem;
+    }
   }
   &__container {
     width: 10rem;
@@ -26,6 +30,7 @@
   &__name {
     font-weight: 600;
     width: 16rem;
+    line-height: normal;
   }
 
   &__wrapper {

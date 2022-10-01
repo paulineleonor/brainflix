@@ -8,7 +8,6 @@
     flex-direction: column;
     align-items: center;
     padding: 1.6rem;
-    max-width: $desktop-max-width;
 
     @include tablet {
       flex-direction: row;
@@ -20,6 +19,8 @@
 
     @include desktop {
       margin: 0 auto;
+      max-width: $desktop-max-width;
+      padding: 1.6rem 0;
     }
   }
 

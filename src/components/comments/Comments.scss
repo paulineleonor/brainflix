@@ -3,6 +3,10 @@
 
 .comments {
   padding: 0 1.6rem;
+
+  @include tablet {
+    padding: 0 3.6rem;
+  }
   &__wrapper {
     border-top: 1px solid $brand-secondary-3;
   }
