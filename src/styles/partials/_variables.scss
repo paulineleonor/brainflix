@@ -1,3 +1,4 @@
+// Colour variables
 $brand-primary-1: #323232;
 $brand-primary-2: #0095ff;
 $brand-primary-3: #afafaf;
@@ -7,7 +8,13 @@ $brand-secondary-2: #0065ad;
 $brand-secondary-3: #e1e1e1;
 $brand-secondary-4: #fafafa;
 
-$mobile-max-width: 767px;
+// Screen breakpoints
 $tablet-breakpoint: 768px;
 $desktop-breakpoint: 1279px;
 $desktop-max-width: 1020px;
+
+// Styling variables
+$standard-spacing-mobile: 1.6rem;
+$standard-spacing-desktop: 3.6rem;
+$gutter-desktop: 2.4rem;
+$border: 1px solid $brand-secondary-3;

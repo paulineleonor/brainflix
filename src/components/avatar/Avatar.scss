@@ -21,16 +21,16 @@
 
     @include tablet {
       display: inline;
-      margin-left: 1.6rem;
+      margin-left: $standard-spacing-mobile;
     }
   }
 
   &--form {
-    margin: 2rem 1.6rem 0 0;
+    margin: 2rem $standard-spacing-mobile 0 0;
   }
 
   &--comments {
-    margin-right: 1.6rem;
+    margin-right: $standard-spacing-mobile;
   }
   &__image {
     height: inherit;

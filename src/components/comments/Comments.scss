@@ -2,28 +2,28 @@
 @use "../../styles/partials/mixins" as *;
 
 .comments {
-  padding: 0 1.6rem;
+  padding: 0 $standard-spacing-mobile;
 
   @include tablet {
-    padding: 0 3.6rem;
+    padding: 0 $standard-spacing-desktop;
   }
   @include desktop {
     padding: 0;
   }
 
   &__wrapper {
-    border-top: 1px solid $brand-secondary-3;
+    border-top: $border;
   }
 }
 
 .comment {
   display: flex;
   width: 100%;
-  border-bottom: 1px solid $brand-secondary-3;
-  padding: 1.6rem 0;
+  border-bottom: $border;
+  padding: $standard-spacing-mobile 0;
 
   @include tablet {
-    padding: 2.4rem 0;
+    padding: $gutter-desktop 0;
   }
 
   &:last-child {
@@ -49,7 +49,7 @@
 
   &__text {
     @include tablet {
-      line-height: 2.4rem;
+      line-height: $gutter-desktop;
     }
   }
 
@@ -57,7 +57,7 @@
     width: 100%;
 
     @include desktop {
-      padding-right: 2.4rem;
+      padding-right: $gutter-desktop;
     }
   }
 
@@ -67,7 +67,7 @@
   }
 
   &__image {
-    height: 1.6rem;
+    height: $standard-spacing-mobile;
 
     &--margin {
       margin-right: 1rem;

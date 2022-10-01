@@ -3,16 +3,18 @@
 
 .form {
   &__wrapper {
-    padding: 0 1.6rem 1.6rem 1.6rem;
+    padding: 0 $standard-spacing-mobile $standard-spacing-mobile
+      $standard-spacing-mobile;
     display: flex;
     width: 100%;
 
     @include tablet {
-      padding: 0 3.6rem 2.4rem 3.6rem;
+      padding: 0 $standard-spacing-desktop $gutter-desktop
+        $standard-spacing-desktop;
     }
 
     @include desktop {
-      padding: 0 2.4rem 2.4rem 0;
+      padding: 0 $gutter-desktop $gutter-desktop 0;
     }
   }
 
@@ -28,9 +30,8 @@
   }
 
   &__input {
-    // all: unset;
     background-color: $brand-secondary-4;
-    border: 1px solid $brand-secondary-3;
+    border: $border;
     height: 8rem;
     border-radius: 5px;
     padding: 1.2rem;
