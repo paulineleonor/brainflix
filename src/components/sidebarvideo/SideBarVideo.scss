@@ -4,7 +4,7 @@
 .sidebar {
   &__video {
     margin-bottom: 1.6rem;
-
+    cursor: pointer;
     @include tablet {
       margin-bottom: 2.4rem;
     }
@@ -12,7 +12,7 @@
   &__container {
     width: 10rem;
     height: 6rem;
-    cursor: pointer;
+
     margin-right: 1.6rem;
   }
 

@@ -6,7 +6,15 @@ import Button from "../button/Button";
 import "./VideoDetails.scss";
 
 function VideoDetails({
-  video: { title, channel, timestamp, likes, views, description, comments },
+  currentVideo: {
+    title,
+    channel,
+    timestamp,
+    likes,
+    views,
+    description,
+    comments,
+  },
 }) {
   // const { title, channel, timestamp, likes, views, description, comments } =
   //   props.video;

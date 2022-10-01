@@ -1,0 +1,12 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.video-info {
+  &__wrapper {
+    @include desktop {
+      display: flex;
+      max-width: $desktop-max-width;
+      margin: 0 auto;
+    }
+  }
+}

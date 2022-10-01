@@ -1,6 +1,8 @@
 import { useState } from "react";
 import Header from "./components/header/Header";
-import VideoContent from "./components/video-section/VideoContent";
+import Hero from "./components/hero/Hero";
+import VideoInfo from "./components/videoInfo/VideoInfo";
+import VideoDetails from "./components/video-details/VideoDetails";
 import Form from "./components/form/Form";
 import Comments from "./components/comments/Comments";
 import Sidebar from "./components/sidebar/Sidebar";
@@ -21,14 +23,26 @@ function App() {
   return (
     <>
       <Header />
-      <VideoContent video={currentVideo} />
-      <Form />
-      <Comments video={currentVideo} />
-      <Sidebar
-        currentVideoId={currentVideo.id}
+      <Hero video={currentVideo} />
+      <VideoInfo
+        currentVideo={currentVideo}
         videos={sideVideos}
         sidebarClickHandler={sidebarClickHandler}
       />
+      {/* <section className="video-info">
+        <div className="video-info__wrapper">
+          <div className="video-info__container">
+            <VideoDetails video={currentVideo} />
+            <Form />
+            <Comments video={currentVideo} />
+          </div>
+          <Sidebar
+            currentVideoId={currentVideo.id}
+            videos={sideVideos}
+            sidebarClickHandler={sidebarClickHandler}
+          />
+        </div>
+      </section> */}
     </>
   );
 }

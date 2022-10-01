@@ -1,7 +1,7 @@
-import "./VideoContent.scss";
-import VideoDetails from "../video-details/VideoDetails";
+import "./Hero.scss";
+// import VideoDetails from "../video-details/VideoDetails";
 
-const VideoContent = (props) => {
+const Hero = (props) => {
   const video = props.video;
   console.log(video.id);
   return (
@@ -9,10 +9,10 @@ const VideoContent = (props) => {
       <div className="video__container">
         <video poster={video.image} controls className="video__image"></video>
       </div>
-
-      <VideoDetails video={video} />
+      {/* 
+      <VideoDetails video={video} /> */}
     </section>
   );
 };
 
-export default VideoContent;
+export default Hero;

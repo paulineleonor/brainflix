@@ -8,6 +8,10 @@
     padding: 3.6rem 3.6rem 1.6rem 3.6rem;
   }
 
+  @include desktop {
+    padding: 3.6rem 0 1.6rem 0;
+  }
+
   &__title {
     padding: 0.8rem 0 1.6rem 0;
 
@@ -40,6 +44,10 @@
     &--right {
       @include tablet {
         justify-content: flex-end;
+      }
+
+      @include desktop {
+        margin-right: 2.4rem;
       }
     }
   }
@@ -85,6 +93,10 @@
 
     @include tablet {
       margin-bottom: 2.4rem;
+    }
+
+    @include desktop {
+      margin-right: 2.4rem;
     }
   }
 

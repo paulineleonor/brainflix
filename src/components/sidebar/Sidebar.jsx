@@ -3,6 +3,7 @@ import SideBarVideo from "../sidebarvideo/SideBarVideo";
 import "./Sidebar.scss";
 
 function Sidebar(props) {
+  console.log(props.videos);
   const filteredVideos = props.videos.filter(
     (video) => video.id !== props.currentVideoId
   );
