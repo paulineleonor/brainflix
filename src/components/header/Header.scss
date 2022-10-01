@@ -12,7 +12,7 @@
 
     @include tablet {
       flex-direction: row;
-      padding: 2.4rem 3.6rem;
+      padding: 1.6rem 3.6rem;
       justify-content: space-between;
       align-items: center;
       margin: 0 auto;
@@ -23,21 +23,21 @@
     }
   }
 
-  &__avatar {
-    display: none;
+  // &__avatar {
+  //   display: none;
 
-    @include tablet {
-      display: inline;
-      margin-left: 1.6rem;
-      height: 4rem;
-      width: 4rem;
-    }
-  }
+  //   @include tablet {
+  //     display: inline;
+  //     margin-left: 1.6rem;
+  //     height: 4rem;
+  //     width: 4rem;
+  //   }
+  // }
 
-  &__image {
-    @include avatar;
-    background-image: url("../../assets/Images/Mohan-muruge.jpg");
-  }
+  // &__image {
+  //   // @include avatar;
+  //   background-image: url("../../assets/Images/Mohan-muruge.jpg");
+  // }
 
   &__logo {
     height: 2.5rem;

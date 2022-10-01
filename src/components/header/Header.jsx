@@ -1,6 +1,7 @@
 import Logo from "../../assets/Logo/BrainFlix-logo.svg";
 import Icon from "../../assets/Icons/search.svg";
 import Button from "../button/Button";
+import Avatar from "../avatar/Avatar";
 import "./Header.scss";
 
 const Header = () => {
@@ -16,17 +17,25 @@ const Header = () => {
               <img src={Icon} alt="A search icon" className="search__icon" />
               <input className="search__input" placeholder="Search" />
             </div>
-            <div className="search__avatar">
+            <Avatar
+              avatarClass="avatar avatar--mobile"
+              imageClass="avatar__image"
+            />
+            {/* <div className="search__avatar">
               <div className="search__image"></div>
-            </div>
+            </div> */}
           </div>
           <Button
             buttonClass="button button--search"
             buttonAction={buttonAction}
           />
-          <div className="header__avatar">
+          <Avatar
+            avatarClass="avatar avatar--desktop"
+            imageClass="avatar__image"
+          />
+          {/* <div className="header__avatar">
             <div className="header__image"></div>
-          </div>
+          </div> */}
         </div>
       </section>
     </header>

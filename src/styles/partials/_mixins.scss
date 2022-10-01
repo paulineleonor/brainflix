@@ -21,7 +21,7 @@
 @mixin header-desktop {
   font-size: 3.3rem;
   line-height: 4.4rem;
-  font-weight: bold;
+  font-weight: 600;
 }
 
 @mixin header-mobile {
@@ -67,15 +67,15 @@
   font-weight: 600;
 }
 
-@mixin avatar {
-  height: 3.6rem;
-  width: 3.6rem;
-  background-size: cover;
-  background-position: 20% 50%;
-  border-radius: 50%;
+// @mixin avatar {
+//   height: 3.6rem;
+//   width: 3.6rem;
+//   background-size: cover;
+//   background-position: 20% 50%;
+//   border-radius: 50%;
 
-  @include tablet {
-    height: 4rem;
-    width: 4rem;
-  }
-}
+//   @include tablet {
+//     height: 4rem;
+//     width: 4rem;
+//   }
+// }

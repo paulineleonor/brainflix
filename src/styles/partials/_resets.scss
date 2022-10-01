@@ -21,7 +21,10 @@ body {
 
 h1 {
   @include header-mobile;
-  font-weight: 600;
+
+  @include tablet {
+    @include header-desktop;
+  }
 }
 
 h2 {
@@ -34,4 +37,8 @@ h2 {
 
 p {
   @include copy-mobile;
+
+  @include tablet {
+    @include copy-desktop;
+  }
 }

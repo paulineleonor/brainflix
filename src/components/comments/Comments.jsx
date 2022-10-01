@@ -1,5 +1,6 @@
 import React from "react";
 import "./Comments.scss";
+import Avatar from "../avatar/Avatar";
 import { dynamicTimestamp } from "../../utils/date.mjs";
 
 function Comments(props) {
@@ -7,9 +8,13 @@ function Comments(props) {
 
   const commentsList = comments.map((comment, i) => (
     <article className="comment" key={i}>
-      <div className="comment__icon">
+      <Avatar
+        avatarClass="avatar avatar--comments"
+        imageClass="avatar__image avatar__image--comments"
+      />
+      {/* <div className="comment__icon">
         <div className="comment__img"></div>
-      </div>
+      </div> */}
       <div className="comment__wrapper">
         <div className="comment__user">
           <p className="comment__name">{comment.name}</p>

@@ -22,7 +22,6 @@ function App() {
     <>
       <Header />
       <VideoContent video={currentVideo} />
-      {/* <VideoContent videoDetails={videoDetails} /> */}
       <Form />
       <Comments video={currentVideo} />
       <Sidebar

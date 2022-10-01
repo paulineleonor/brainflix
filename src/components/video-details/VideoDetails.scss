@@ -4,8 +4,16 @@
 .videoDetails {
   padding: 1.6rem;
 
+  @include tablet {
+    padding: 3.6rem;
+  }
+
   &__title {
     padding: 0.8rem 0 1.6rem 0;
+
+    @include tablet {
+      padding: 0 0 1.6rem 0;
+    }
   }
 
   &__details {
@@ -15,26 +23,57 @@
     justify-content: space-between;
     padding-top: 1.6rem;
     margin-bottom: 1.6rem;
+
+    @include tablet {
+      border-top: none;
+      padding-top: 0;
+    }
   }
 
   &__wrapper {
     width: 50%;
+
+    @include tablet {
+      display: flex;
+    }
+
+    &--right {
+      @include tablet {
+        justify-content: flex-end;
+      }
+    }
   }
   &__metrics {
     display: flex;
+
+    &--left {
+      @include tablet {
+        margin-right: 3.6rem;
+      }
+    }
   }
   &__channel {
     font-weight: 600;
     margin-bottom: 1.6rem;
+    @include tablet {
+      margin-right: 3.6rem;
+      margin-bottom: 0.8rem;
+    }
   }
   &__date {
     margin-bottom: 1.6rem;
     color: $brand-primary-3;
+    @include tablet {
+      margin-bottom: 0.8rem;
+    }
   }
 
   &__metrics {
     color: $brand-primary-3;
     margin-bottom: 1.6rem;
+    @include tablet {
+      margin-bottom: 0.8rem;
+    }
   }
 
   &__icon {
@@ -47,5 +86,11 @@
 
   &__comments {
     font-weight: 600;
+  }
+
+  &__views {
+    @include tablet {
+      margin-right: 3.6rem;
+    }
   }
 }

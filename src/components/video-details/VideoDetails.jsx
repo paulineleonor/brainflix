@@ -5,9 +5,11 @@ import { convertDate } from "../../utils/date.mjs";
 import Button from "../button/Button";
 import "./VideoDetails.scss";
 
-function VideoDetails(props) {
-  const { title, channel, timestamp, likes, views, description, comments } =
-    props.video;
+function VideoDetails({
+  video: { title, channel, timestamp, likes, views, description, comments },
+}) {
+  // const { title, channel, timestamp, likes, views, description, comments } =
+  //   props.video;
 
   const date = convertDate(timestamp);
 
@@ -20,8 +22,8 @@ function VideoDetails(props) {
             <p className="videoDetails__channel">By {channel}</p>
             <p className="videoDetails__date">{date}</p>
           </div>
-          <div className="videoDetails__wrapper">
-            <div className="videoDetails__metrics">
+          <div className="videoDetails__wrapper videoDetails__wrapper--right">
+            <div className="videoDetails__metrics videoDetails__metrics--left">
               <img src={ViewsIcon} alt="" className="videoDetails__icon" />
               <p className="videoDetails__number">{views}</p>
             </div>

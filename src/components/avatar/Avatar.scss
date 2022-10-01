@@ -1,0 +1,44 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.avatar {
+  height: 3.6rem;
+  width: 3.6rem;
+
+  @include tablet {
+    height: 4rem;
+    width: 4rem;
+  }
+
+  &--mobile {
+    @include tablet {
+      display: none;
+    }
+  }
+
+  &--desktop {
+    display: none;
+
+    @include tablet {
+      display: inline;
+      margin-left: 1.6rem;
+    }
+  }
+
+  &--comments {
+    margin-right: 1.6rem;
+  }
+  &__image {
+    height: inherit;
+    width: inherit;
+    background-image: url("../../assets/Images/Mohan-muruge.jpg");
+    background-size: cover;
+    background-position: 20% 50%;
+    border-radius: 50%;
+
+    &--comments {
+      background-image: none;
+      background-color: $brand-secondary-3;
+    }
+  }
+}

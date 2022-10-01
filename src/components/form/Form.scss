@@ -31,6 +31,11 @@
     display: flex;
     flex-direction: column;
     width: 100%;
+
+    @include tablet {
+      flex-direction: row;
+      justify-content: space-between;
+    }
   }
 
   &__input {
@@ -44,6 +49,27 @@
 
     &::placeholder {
       color: $brand-primary-1;
+    }
+
+    @include tablet {
+      height: 1.2rem;
+      margin-bottom: 0;
+      overflow: hidden;
+    }
+  }
+
+  &__button {
+    @include tablet {
+      margin: 2rem 0 0 2rem;
+    }
+  }
+
+  &__field {
+    display: flex;
+    flex-direction: column;
+
+    @include tablet {
+      width: 100%;
     }
   }
 
