@@ -1,16 +1,10 @@
 import React from "react";
 import "./Comments.scss";
 import Avatar from "../avatar/Avatar";
-import { dynamicTimestamp } from "../../utils/date.mjs";
+import { dynamicTimestamp } from "../../utils/dates.mjs";
 
-function Comments(props) {
+const Comments = (props) => {
   const comments = props.video.comments;
-
-  // const applyClass = (index) => {
-  //   if (index === comments.length -1) {
-
-  //   }
-  // }
 
   const commentsList = comments.map((comment, i) => (
     <article className="comment" key={i}>
@@ -18,9 +12,6 @@ function Comments(props) {
         avatarClass="avatar avatar--comments"
         imageClass="avatar__image avatar__image--comments"
       />
-      {/* <div className="comment__icon">
-        <div className="comment__img"></div>
-      </div> */}
       <div className="comment__wrapper">
         <div className="comment__user">
           <p className="comment__name">{comment.name}</p>
@@ -36,6 +27,6 @@ function Comments(props) {
       <div className="comments__wrapper">{commentsList}</div>
     </section>
   );
-}
+};
 
 export default Comments;

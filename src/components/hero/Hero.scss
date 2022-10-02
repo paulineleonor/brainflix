@@ -2,8 +2,8 @@
 @use "../../styles/partials/mixins" as *;
 
 .video {
+  background-color: $brand-secondary-1;
   &__container {
-    background-color: $brand-secondary-1;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -11,14 +11,24 @@
     @include tablet {
       padding: 0 $standard-spacing-desktop;
     }
+
+    @include desktop {
+    }
   }
 
   &__image {
     width: 100%;
     margin: 0 auto;
+    max-height: 43rem;
+
+    @include tablet {
+      max-height: 57rem;
+      max-width: 91rem;
+    }
 
     @include desktop {
-      max-width: $desktop-max-width;
+      max-height: 70vh;
+      max-width: 85rem;
     }
   }
 }

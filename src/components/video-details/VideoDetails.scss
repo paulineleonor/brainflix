@@ -5,12 +5,12 @@
   padding: $standard-spacing-mobile;
 
   @include tablet {
-    padding: $standard-spacing-desktop $standard-spacing-desktop
-      $standard-spacing-mobile $standard-spacing-desktop;
+    padding: $gutter-desktop $standard-spacing-desktop $standard-spacing-mobile
+      $standard-spacing-desktop;
   }
 
   @include desktop {
-    padding: $standard-spacing-desktop 0 $standard-spacing-mobile 0;
+    padding: $gutter-desktop 0 $standard-spacing-mobile 0;
   }
 
   &__title {
@@ -22,8 +22,8 @@
   }
 
   &__details {
-    border-top: 1px solid $brand-secondary-3;
-    border-bottom: 1px solid $brand-secondary-3;
+    border-top: $border;
+    border-bottom: $border;
     display: flex;
     justify-content: space-between;
     padding-top: $standard-spacing-mobile;
@@ -52,34 +52,35 @@
       }
     }
   }
+
+  &__views,
+  &__channel,
+  &__metrics--left {
+    @include tablet {
+      margin-right: $standard-spacing-desktop;
+    }
+  }
+
   &__metrics {
     display: flex;
 
     &--left {
       @include tablet {
-        margin-right: $standard-spacing-desktop;
       }
     }
   }
   &__channel {
     font-weight: 600;
     margin-bottom: $standard-spacing-mobile;
-    @include tablet {
-      margin-right: $standard-spacing-desktop;
-      margin-bottom: 0.8rem;
-    }
-  }
-  &__date {
-    margin-bottom: $standard-spacing-mobile;
-    color: $brand-primary-3;
-    @include tablet {
-      margin-bottom: 0.8rem;
-    }
-  }
 
+    @include tablet {
+      margin-bottom: 0.8rem;
+    }
+  }
+  &__date,
   &__metrics {
-    color: $brand-primary-3;
     margin-bottom: $standard-spacing-mobile;
+    color: $brand-primary-3;
     @include tablet {
       margin-bottom: 0.8rem;
     }
@@ -103,11 +104,5 @@
 
   &__comments {
     font-weight: 600;
-  }
-
-  &__views {
-    @include tablet {
-      margin-right: $standard-spacing-desktop;
-    }
   }
 }
