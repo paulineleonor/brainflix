@@ -1,7 +1,7 @@
 import "./Hero.scss";
 
 const Hero = (props) => {
-  const video = props.video;
+  const video = props.currentVideo;
   return (
     <section className="video">
       <div className="video__container">

@@ -24,6 +24,7 @@ const Header = () => {
         <Button
           buttonClass="button button--search"
           buttonAction={buttonAction}
+          destination="/upload"
         />
         <Avatar
           avatarClass="avatar avatar--desktop"
