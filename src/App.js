@@ -10,39 +10,14 @@ import "./App.scss";
 function App() {
   const [currentVideo, setCurrentVideo] = useState(videoDetails[0]);
   const [sideVideos, setSideVideos] = useState(videos);
-
-  // const sidebarClickHandler = (videoId) => {
-  //   const newVideo = videoDetails.find((video) => video.id === videoId);
-  //   setCurrentVideo(newVideo);
-  // };
-
   console.log(currentVideo);
 
   return (
     <>
       <Header />
       <Routes>
-        <Route
-          path="/"
-          element={
-            <HomePage
-              currentVideo={currentVideo}
-              sideVideos={sideVideos}
-              videos={videos}
-              // sidebarClickHandler={sidebarClickHandler}
-            />
-          }
-        />
-        <Route
-          path="video/:videoId"
-          element={
-            <HomePage
-              currentVideo={currentVideo}
-              sideVideos={sideVideos}
-              videos={videos}
-            />
-          }
-        />
+        <Route path="/" element={<HomePage />} />
+        <Route path="video/:videoId" element={<HomePage />} />
         <Route path="/upload" element={<Upload />} />
       </Routes>
     </>

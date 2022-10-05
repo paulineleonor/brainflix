@@ -1,9 +1,28 @@
 import React from "react";
 import SideBarVideo from "../sidebarvideo/SideBarVideo";
 import "./Sidebar.scss";
+import { useState, useEffect } from "react";
+import { getVideos } from "../../utils/api.mjs";
+import axios from "axios";
 
 const Sidebar = (props) => {
-  const filteredVideos = props.videos.filter(
+  const [videosArray, setVideosArray] = useState([]);
+
+  const getVideosArray = async () => {
+    const { data } = await getVideos();
+    console.log(data);
+    setVideosArray(data);
+  };
+
+  useEffect(() => {
+    getVideosArray();
+  }, []);
+
+  if (!videosArray.length > 0) {
+    return <p>Loading</p>;
+  }
+
+  const filteredVideos = videosArray.filter(
     (video) => video.id !== props.currentVideoId
   );
 
