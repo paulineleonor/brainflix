@@ -1,15 +1,28 @@
-import Logo from "../../assets/Logo/BrainFlix-logo.svg";
+import { NavLink, useNavigate } from "react-router-dom";
 import Icon from "../../assets/Icons/search.svg";
-import Button from "../button/Button";
+import Logo from "../../assets/Logo/BrainFlix-logo.svg";
 import Avatar from "../avatar/Avatar";
+import Button from "../button/Button";
 import "./Header.scss";
 
 const Header = () => {
   const buttonAction = "Upload";
+  const navigate = useNavigate();
 
   const headerContent = (
     <section className="header__container">
-      <img src={Logo} alt="" className="header__logo" />
+      <NavLink to="/">
+        {" "}
+        <img
+          src={Logo}
+          alt=""
+          className="header__logo"
+          // onClick={() => {
+          //   navigate("/");
+          // }}
+        />
+      </NavLink>
+
       <div className="header__wrapper">
         <div className="search">
           <div className="search__form">

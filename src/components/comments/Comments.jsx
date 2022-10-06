@@ -21,6 +21,7 @@ const Comments = (props) => {
           <p className="comment__date">{dynamicTimestamp(comment.timestamp)}</p>
         </div>
         <p className="comment__copy">{comment.comment}</p>
+        <div onClick={() => props.deleteHandler(comment)}>Delete</div>
       </div>
     </article>
   ));

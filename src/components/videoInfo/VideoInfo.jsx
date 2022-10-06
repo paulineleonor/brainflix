@@ -11,8 +11,15 @@ const VideoInfo = (props) => {
       <div className="video-info__wrapper">
         <div className="video-info__container">
           <VideoDetails currentVideo={props.currentVideo} />
-          <Form />
-          <Comments video={props.currentVideo} />
+          <Form
+            currentVideo={props.currentVideo}
+            getVideoDetails={props.getVideoDetails}
+            submitHandler={props.submitHandler}
+          />
+          <Comments
+            video={props.currentVideo}
+            deleteHandler={props.deleteHandler}
+          />
         </div>
         <Sidebar
           currentVideoId={props.currentVideo.id}

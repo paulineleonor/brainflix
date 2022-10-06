@@ -38,7 +38,9 @@
     margin-bottom: $standard-spacing-mobile;
     font-family: "AvenirNext";
     resize: none;
+
     &:focus {
+      outline: none;
       border: 2px solid $brand-primary-2;
     }
     &::placeholder {

@@ -1,0 +1,19 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.upload {
+  padding: 1.6rem;
+  border-top: $border;
+
+  &__container {
+    max-width: $desktop-max-width;
+  }
+  &__form-container {
+    display: flex;
+    flex-direction: column;
+  }
+  &__image {
+    width: 100%;
+    border-radius: 4px;
+  }
+}
