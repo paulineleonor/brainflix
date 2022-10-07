@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "../../assets/Images/Upload-video-preview.jpg";
+import Button from "../../components/button/Button";
 import "./Upload.scss";
 
 const Upload = () => {
@@ -40,6 +41,11 @@ const Upload = () => {
             </div>
           </section>
         </div>
+        <Button
+          destination="/"
+          buttonClass="button button--upload"
+          buttonAction="Publish"
+        />
       </div>
     </section>
   );
