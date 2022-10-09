@@ -1,8 +1,8 @@
 import { Route, Routes } from "react-router-dom";
 import "./App.scss";
 import Header from "./components/Header/Header";
-import HomePage from "./pages/HomePage/HomePage";
-import Upload from "./pages/Upload/Upload";
+import HomePage from "./pages/homePage/HomePage";
+import Upload from "./pages/upload/Upload";
 
 function App() {
   return (
