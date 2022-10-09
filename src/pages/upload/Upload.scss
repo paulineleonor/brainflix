@@ -4,16 +4,42 @@
 .upload {
   padding: 1.6rem;
   border-top: $border;
-
   &__container {
     max-width: $desktop-max-width;
   }
   &__form-container {
     display: flex;
     flex-direction: column;
+    margin-bottom: $standard-spacing-mobile;
+  }
+
+  &__title {
+    margin: 0.8rem 0 2.4rem 0;
   }
   &__image {
     width: 100%;
     border-radius: 4px;
+  }
+
+  &__questions {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__input {
+    @include form-styling;
+    margin-bottom: $standard-spacing-mobile;
+
+    &--height {
+      height: 8rem;
+    }
+
+    &--error {
+      border-color: #d22d2d;
+    }
+  }
+
+  &__buttons {
+    margin-top: 0.8rem;
   }
 }

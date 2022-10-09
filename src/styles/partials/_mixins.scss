@@ -47,3 +47,21 @@
   line-height: 2rem;
   font-weight: 600;
 }
+
+@mixin form-styling {
+  background-color: $brand-secondary-4;
+  border: $border;
+  border-radius: 5px;
+  padding: 1.2rem;
+  font-family: "AvenirNext";
+  resize: none;
+
+  &:focus {
+    outline: none;
+    border: 2px solid $brand-primary-2;
+  }
+  &::placeholder {
+    color: $brand-primary-1;
+    font-family: "AvenirNext";
+  }
+}

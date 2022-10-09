@@ -77,4 +77,45 @@
   &__count {
     margin-right: 0.3rem;
   }
+
+  &__delete {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &__icon {
+    height: 1.6rem;
+    cursor: pointer;
+    animation: scaledown 0.2s linear;
+    animation-fill-mode: forwards;
+    &:active {
+      z-index: 100;
+      animation: scaleup 0.2s linear;
+      animation-fill-mode: forwards;
+    }
+  }
+  @keyframes scaledown {
+    0% {
+      -webkit-transform: scale(1);
+      transform: scale(1);
+    }
+    100% {
+      -webkit-transform: scale(1);
+      transform: scale(1);
+    }
+  }
+  @keyframes scaleup {
+    0% {
+      -webkit-transform: scale(1);
+      transform: scale(1);
+    }
+    50% {
+      -webkit-transform: scale(1.4);
+      transform: scale(1.4);
+    }
+    100% {
+      -webkit-transform: scale(1.4);
+      transform: scale(1.4);
+    }
+  }
 }

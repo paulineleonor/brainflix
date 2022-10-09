@@ -24,34 +24,23 @@
     width: 100%;
 
     @include tablet {
-      flex-direction: row;
+      // flex-direction: row;
       justify-content: space-between;
     }
   }
 
   &__input {
-    background-color: $brand-secondary-4;
-    border: $border;
-    height: 8rem;
-    border-radius: 5px;
-    padding: 1.2rem;
     margin-bottom: $standard-spacing-mobile;
-    font-family: "AvenirNext";
-    resize: none;
+    @include form-styling;
 
-    &:focus {
-      outline: none;
-      border: 2px solid $brand-primary-2;
-    }
-    &::placeholder {
-      color: $brand-primary-1;
-      font-family: "AvenirNext";
-    }
+    &--height {
+      height: 8rem;
 
-    @include tablet {
-      height: 4rem;
-      margin-bottom: 0;
-      overflow: hidden;
+      @include tablet {
+        // height: 4rem;
+        margin-bottom: 0;
+        overflow: hidden;
+      }
     }
   }
 

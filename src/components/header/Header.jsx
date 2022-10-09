@@ -12,15 +12,7 @@ const Header = () => {
   const headerContent = (
     <section className="header__container">
       <NavLink to="/">
-        {" "}
-        <img
-          src={Logo}
-          alt=""
-          className="header__logo"
-          // onClick={() => {
-          //   navigate("/");
-          // }}
-        />
+        <img src={Logo} alt="" className="header__logo" />
       </NavLink>
 
       <div className="header__wrapper">
@@ -38,6 +30,7 @@ const Header = () => {
           buttonClass="button button--search"
           buttonAction={buttonAction}
           destination="/upload"
+          willRedirect={true}
         />
         <Avatar
           avatarClass="avatar avatar--desktop"

@@ -27,7 +27,8 @@ h1 {
   }
 }
 
-h2 {
+h2,
+label {
   text-transform: uppercase;
   color: $brand-primary-3;
   font-size: 1.2rem;
@@ -41,4 +42,9 @@ p {
   @include tablet {
     @include copy-desktop;
   }
+}
+
+a {
+  text-decoration: none;
+  color: black;
 }

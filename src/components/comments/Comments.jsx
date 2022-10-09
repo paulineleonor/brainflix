@@ -1,8 +1,8 @@
 import React from "react";
-import "./Comments.scss";
-import Avatar from "../avatar/Avatar";
+import DeleteIcon from "../../assets/Icons/icon-delete.svg";
 import { dynamicTimestamp } from "../../utils/dates.mjs";
-import API_URL from "../../utils/api.mjs";
+import Avatar from "../avatar/Avatar";
+import "./Comments.scss";
 
 const Comments = (props) => {
   const apiKey = "26689ce2-c1a8-4056-af4e-6d835c87e633";
@@ -21,7 +21,15 @@ const Comments = (props) => {
           <p className="comment__date">{dynamicTimestamp(comment.timestamp)}</p>
         </div>
         <p className="comment__copy">{comment.comment}</p>
-        <div onClick={() => props.deleteHandler(comment)}>Delete</div>
+        <div className="comment__delete">
+          {" "}
+          <img
+            src={DeleteIcon}
+            alt="A bin icon"
+            onClick={() => props.deleteHandler(comment)}
+            className="comment__icon"
+          />
+        </div>
       </div>
     </article>
   ));

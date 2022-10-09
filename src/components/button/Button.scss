@@ -15,11 +15,16 @@
   align-items: center;
   text-transform: uppercase;
   @include labels-buttons;
+  cursor: pointer;
+  transition: background-color 1s;
 
   @include tablet {
     width: 15rem;
   }
 
+  &:hover {
+    background-color: $brand-secondary-2;
+  }
   &--comment {
     background-image: url("../../assets/Icons/add_comment.svg");
     background-size: 2rem;

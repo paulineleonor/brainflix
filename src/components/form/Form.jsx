@@ -1,8 +1,7 @@
 import React from "react";
-import Button from "../button/Button";
 import Avatar from "../avatar/Avatar";
+import Button from "../button/Button";
 import "./Form.scss";
-import axios from "axios";
 
 const Form = (props) => {
   const formContent = (
@@ -11,16 +10,26 @@ const Form = (props) => {
       <form className="form__inner" onSubmit={props.submitHandler}>
         <div className="form__field">
           <h2 className="form__label">Join the conversation</h2>
-          <input type="text" name="name" id="name" placeholder="Your name" />
+          <input
+            className="form__input"
+            type="text"
+            name="name"
+            id="name"
+            placeholder="Your name"
+          />
           <textarea
             id="comment"
             name="comment"
             placeholder="Add a new comment"
-            className="form__input"
+            className="form__input form__input--height"
           ></textarea>
         </div>
         <div className="form__button">
-          <Button buttonAction="Comment" buttonClass="button button--comment" />
+          <Button
+            buttonAction="Comment"
+            willRedirect={false}
+            buttonClass="button button--comment"
+          />
         </div>
       </form>
     </article>

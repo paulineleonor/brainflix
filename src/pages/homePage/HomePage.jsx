@@ -38,7 +38,6 @@ const HomePage = () => {
     selectedVideo.data.comments.sort((a, b) =>
       a.timestamp < b.timestamp ? 1 : -1
     );
-    // console.log("Video" + currentVideo.comments[0].timestamp);
 
     setCurrentVideo(selectedVideo.data);
   };
@@ -73,6 +72,7 @@ const HomePage = () => {
 
   const submitHandler = async (event) => {
     event.preventDefault();
+
     const newComment = {
       name: event.target.name.value,
       comment: event.target.name.value,
