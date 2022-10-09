@@ -10,13 +10,6 @@ const Form = (props) => {
       <form className="form__inner" onSubmit={props.submitHandler}>
         <div className="form__field">
           <h2 className="form__label">Join the conversation</h2>
-          <input
-            className="form__input"
-            type="text"
-            name="name"
-            id="name"
-            placeholder="Your name"
-          />
           <textarea
             id="comment"
             name="comment"

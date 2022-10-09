@@ -74,8 +74,8 @@ const HomePage = () => {
     event.preventDefault();
 
     const newComment = {
-      name: event.target.name.value,
-      comment: event.target.name.value,
+      name: "Mohan Muruge",
+      comment: event.target.comment.value,
     };
 
     await axios.post(

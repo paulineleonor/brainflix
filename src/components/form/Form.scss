@@ -25,6 +25,7 @@
 
     @include tablet {
       justify-content: space-between;
+      flex-direction: row;
     }
   }
 
@@ -38,6 +39,7 @@
       @include tablet {
         margin-bottom: 0;
         overflow: hidden;
+        height: 4rem;
       }
     }
   }
