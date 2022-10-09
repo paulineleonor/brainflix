@@ -4,6 +4,10 @@ const API_URL = "https://project-2-api.herokuapp.com/videos";
 const apiKey = "?api_key=26689ce2-c1a8-4056-af4e-6d835c87e633";
 
 const ApiService = {
+  getVideos: async () => {
+    return axios.get(`${API_URL}/${apiKey}`);
+  },
+
   createComment: async (
     event,
     currentVideo,

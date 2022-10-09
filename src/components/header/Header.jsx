@@ -1,4 +1,4 @@
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import Icon from "../../assets/Icons/search.svg";
 import Logo from "../../assets/Logo/BrainFlix-logo.svg";
 import Avatar from "../Avatar/Avatar";
@@ -7,14 +7,12 @@ import "./Header.scss";
 
 const Header = () => {
   const buttonAction = "Upload";
-  const navigate = useNavigate();
 
   const headerContent = (
     <section className="header__container">
       <NavLink to="/">
         <img src={Logo} alt="" className="header__logo" />
       </NavLink>
-
       <div className="header__wrapper">
         <div className="search">
           <div className="search__form">

@@ -5,6 +5,7 @@ import { BounceLoader } from "react-spinners";
 import Hero from "../../components/Hero/Hero";
 import VideoInfo from "../../components/VideoInfo/VideoInfo";
 import ApiService from "../../services/ApiService";
+import "./HomePage.scss";
 
 const HomePage = () => {
   const [currentVideo, setCurrentVideo] = useState(null);

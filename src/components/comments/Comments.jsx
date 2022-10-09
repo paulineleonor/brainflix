@@ -5,8 +5,6 @@ import Avatar from "../Avatar/Avatar";
 import "./Comments.scss";
 
 const Comments = (props) => {
-  const apiKey = "26689ce2-c1a8-4056-af4e-6d835c87e633";
-
   const comments = props.video.comments;
 
   const commentsList = comments.map((comment, i) => (

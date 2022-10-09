@@ -47,5 +47,3 @@ const dynamicTimestamp = (timeStamp) => {
 };
 
 export { convertDate, dynamicTimestamp };
-
-// export default convertDate;
