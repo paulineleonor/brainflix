@@ -24,7 +24,6 @@
     width: 100%;
 
     @include tablet {
-      // flex-direction: row;
       justify-content: space-between;
     }
   }
@@ -37,7 +36,6 @@
       height: 8rem;
 
       @include tablet {
-        // height: 4rem;
         margin-bottom: 0;
         overflow: hidden;
       }
