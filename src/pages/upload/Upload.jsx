@@ -9,10 +9,9 @@ const Upload = () => {
   const [titleHasError, setTitleHasError] = useState(false);
   const navigate = useNavigate();
 
+  // checks for valid input, sets states, and navigates to homepage after 3 secs
   const handlePublish = (e) => {
     e.preventDefault();
-
-    console.log("test");
 
     if (!e.target.description.value && !e.target.title.value) {
       setTitleHasError(true);
@@ -31,9 +30,22 @@ const Upload = () => {
     setShowMessage(true);
 
     setTimeout(() => {
-      console.log("test2");
       navigate("/");
-    }, 1000);
+    }, 3000);
+  };
+
+  // changes error state of title to false when field is not empty
+  const handleTitleChange = (e) => {
+    if (e.target.value.length > 0) {
+      setTitleHasError(false);
+    }
+  };
+
+  // changes error state of description to false when field is not empty
+  const handleDescriptionChange = (e) => {
+    if (e.target.value.length > 0) {
+      setDescriptionHasError(false);
+    }
   };
 
   return (
@@ -57,6 +69,7 @@ const Upload = () => {
                   name="title"
                   id="title"
                   placeholder="Add a title to your video"
+                  onChange={(e) => handleTitleChange(e)}
                   className={`upload__input ${
                     titleHasError && "upload__input--error"
                   }`}
@@ -68,17 +81,30 @@ const Upload = () => {
                   name="description"
                   id="description"
                   placeholder="Add a description to your video"
+                  onChange={(e) => handleDescriptionChange(e)}
                   className={`upload__input upload__input--height ${
                     descriptionHasError && "upload__input--error"
                   }`}
                 />
               </div>
             </div>
-          </section>{" "}
-          <div className="upload__buttons">
-            {showMessage && <p>Upload successful</p>}
-            <button className="button button--upload">Publish</button>
-            <Link to="/">Cancel</Link>
+          </section>
+          <div className="upload__functionalities">
+            {showMessage && (
+              <div className="upload__success">
+                <p className="upload__message">Upload successful</p>
+              </div>
+            )}
+            <div className="upload__buttons">
+              <button className="upload__button upload__button--publish">
+                Publish
+              </button>
+              <div className="upload__cancel">
+                <Link to="/" className="upload__link">
+                  Cancel
+                </Link>
+              </div>
+            </div>
           </div>
         </form>
       </div>
