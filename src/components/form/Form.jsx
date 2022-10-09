@@ -14,7 +14,10 @@ const Form = (props) => {
             id="comment"
             name="comment"
             placeholder="Add a new comment"
-            className="form__input form__input--height"
+            onChange={(e) => props.handleFormChange(e)}
+            className={`form__input ${
+              props.formHasError && "form__input--error"
+            }`}
           ></textarea>
         </div>
         <div className="form__button">

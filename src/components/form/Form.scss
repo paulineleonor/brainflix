@@ -32,15 +32,16 @@
   &__input {
     margin-bottom: $standard-spacing-mobile;
     @include form-styling;
+    height: 8rem;
 
-    &--height {
-      height: 8rem;
+    @include tablet {
+      margin-bottom: 0;
+      overflow: hidden;
+      height: 4rem;
+    }
 
-      @include tablet {
-        margin-bottom: 0;
-        overflow: hidden;
-        height: 4rem;
-      }
+    &--error {
+      border-color: #d22d2d;
     }
   }
 

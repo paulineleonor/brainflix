@@ -7,6 +7,7 @@ import VideoInfo from "../../components/videoInfo/VideoInfo";
 const HomePage = () => {
   const [currentVideo, setCurrentVideo] = useState(null);
   const [sideVideos, setSideVideos] = useState(null);
+  const [formHasError, setFormHasError] = useState(false);
 
   const { videoId } = useParams();
   const location = useLocation();
@@ -64,14 +65,17 @@ const HomePage = () => {
     getVideoDetails(videoId);
   }, [videoId]);
 
-  console.log(currentVideo);
-
   if (!currentVideo) {
     return <p>Loading</p>;
   }
 
   const submitHandler = async (event) => {
     event.preventDefault();
+
+    if (!event.target.comment.value) {
+      setFormHasError(true);
+      return;
+    }
 
     const newComment = {
       name: "Mohan Muruge",
@@ -85,6 +89,13 @@ const HomePage = () => {
 
     event.target.reset();
     getVideoDetails(currentVideo.id);
+  };
+
+  const handleFormChange = (e) => {
+    console.log(e.target.value);
+    if (e.target.value.length > 0) {
+      setFormHasError(false);
+    }
   };
 
   const deleteHandler = async (comment) => {
@@ -106,6 +117,8 @@ const HomePage = () => {
         submitHandler={submitHandler}
         getVideoDetails={getVideoDetails}
         deleteHandler={deleteHandler}
+        formHasError={formHasError}
+        handleFormChange={handleFormChange}
       />
     </>
   );

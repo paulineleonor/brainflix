@@ -1,8 +1,8 @@
 import React from "react";
-import VideoDetails from "../video-details/VideoDetails";
-import Form from "../form/Form";
 import Comments from "../comments/Comments";
+import Form from "../form/Form";
 import Sidebar from "../sidebar/Sidebar";
+import VideoDetails from "../video-details/VideoDetails";
 import "./VideoInfo.scss";
 
 const VideoInfo = (props) => {
@@ -15,6 +15,8 @@ const VideoInfo = (props) => {
             currentVideo={props.currentVideo}
             getVideoDetails={props.getVideoDetails}
             submitHandler={props.submitHandler}
+            formHasError={props.formHasError}
+            handleFormChange={props.handleFormChange}
           />
           <Comments
             video={props.currentVideo}
