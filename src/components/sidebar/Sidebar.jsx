@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { getVideos } from "../../utils/api.mjs";
-import SideBarVideo from "../sidebarvideo/SideBarVideo";
+import SideBarVideo from "../SideBarVideo/SideBarVideo";
 import "./Sidebar.scss";
 
 const Sidebar = (props) => {

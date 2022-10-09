@@ -1,8 +1,8 @@
 import React from "react";
-import Comments from "../comments/Comments";
-import Form from "../form/Form";
-import Sidebar from "../sidebar/Sidebar";
-import VideoDetails from "../video-details/VideoDetails";
+import Comments from "../Comments/Comments";
+import Form from "../Form/Form";
+import Sidebar from "../Sidebar/Sidebar";
+import VideoDetails from "../VideoDetails/VideoDetails";
 import "./VideoInfo.scss";
 
 const VideoInfo = (props) => {

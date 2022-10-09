@@ -1,6 +1,6 @@
 import React from "react";
-import Avatar from "../avatar/Avatar";
-import Button from "../button/Button";
+import Avatar from "../Avatar/Avatar";
+import Button from "../Button/Button";
 import "./Form.scss";
 
 const Form = (props) => {

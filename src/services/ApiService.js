@@ -23,7 +23,7 @@ const ApiService = {
     };
 
     await axios.post(
-      `https://project-2-api.herokuapp.com/videos/${currentVideo.id}/comments/?api_key=26689ce2-c1a8-4056-af4e-6d835c87e633`,
+      `${API_URL}/${currentVideo.id}/comments/${apiKey}`,
       newComment
     );
 
@@ -34,7 +34,7 @@ const ApiService = {
   deleteComment: async (currentVideo, comment, setInitialState) => {
     const commentId = comment.id;
     await axios.delete(
-      `https://project-2-api.herokuapp.com/videos/${currentVideo.id}/comments/${commentId}/?api_key=26689ce2-c1a8-4056-af4e-6d835c87e633`
+      `${API_URL}/${currentVideo.id}/comments/${commentId}/${apiKey}`
     );
     setInitialState(currentVideo.id);
   },

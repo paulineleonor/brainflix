@@ -1,7 +1,7 @@
 import React from "react";
 import DeleteIcon from "../../assets/Icons/icon-delete.svg";
 import { dynamicTimestamp } from "../../utils/dates.mjs";
-import Avatar from "../avatar/Avatar";
+import Avatar from "../Avatar/Avatar";
 import "./Comments.scss";
 
 const Comments = (props) => {

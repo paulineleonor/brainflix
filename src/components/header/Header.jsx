@@ -1,8 +1,8 @@
 import { NavLink, useNavigate } from "react-router-dom";
 import Icon from "../../assets/Icons/search.svg";
 import Logo from "../../assets/Logo/BrainFlix-logo.svg";
-import Avatar from "../avatar/Avatar";
-import Button from "../button/Button";
+import Avatar from "../Avatar/Avatar";
+import Button from "../Button/Button";
 import "./Header.scss";
 
 const Header = () => {

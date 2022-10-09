@@ -1,8 +1,9 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useLocation, useParams } from "react-router-dom";
-import Hero from "../../components/hero/Hero";
-import VideoInfo from "../../components/videoInfo/VideoInfo";
+import { BounceLoader } from "react-spinners";
+import Hero from "../../components/Hero/Hero";
+import VideoInfo from "../../components/VideoInfo/VideoInfo";
 import ApiService from "../../services/ApiService";
 
 const HomePage = () => {
@@ -13,6 +14,7 @@ const HomePage = () => {
   const { videoId } = useParams();
   const location = useLocation();
 
+  // Retrieve all video data from API and set current video
   const getVideos = async (id) => {
     const { data } = await axios.get(
       `https://project-2-api.herokuapp.com/videos/?api_key=26689ce2-c1a8-4056-af4e-6d835c87e633`
@@ -43,19 +45,26 @@ const HomePage = () => {
   }, [videoId]);
 
   if (!currentVideo) {
-    return <p>Loading</p>;
+    return (
+      <div className="loader">
+        <BounceLoader color="#0095ff" />
+      </div>
+    );
   }
 
+  // Handles new comment submission, checks for form errors and rerenders list of comments
   const submitHandler = async (event) => {
     ApiService.createComment(event, currentVideo, setFormHasError, getVideos);
   };
 
+  // Removes form error state when input is no longer empty
   const handleFormChange = (e) => {
     if (e.target.value.length > 0) {
       setFormHasError(false);
     }
   };
 
+  // Handles comment deletion and rerenders list of comments
   const deleteHandler = async (comment) => {
     ApiService.deleteComment(currentVideo, comment, getVideos);
   };
