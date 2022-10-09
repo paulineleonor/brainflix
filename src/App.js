@@ -5,10 +5,6 @@ import HomePage from "./pages/homePage/HomePage";
 import Upload from "./pages/upload/Upload";
 
 function App() {
-  // const [currentVideo, setCurrentVideo] = useState(videoDetails[0]);
-  // const [sideVideos, setSideVideos] = useState(videos);
-  // console.log(currentVideo);
-
   return (
     <>
       <Header />

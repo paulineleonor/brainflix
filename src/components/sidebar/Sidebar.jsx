@@ -1,16 +1,13 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { getVideos } from "../../utils/api.mjs";
 import SideBarVideo from "../sidebarvideo/SideBarVideo";
 import "./Sidebar.scss";
-import { useState, useEffect } from "react";
-import { getVideos } from "../../utils/api.mjs";
-import axios from "axios";
 
 const Sidebar = (props) => {
   const [videosArray, setVideosArray] = useState([]);
 
   const getVideosArray = async () => {
     const { data } = await getVideos();
-    console.log(data);
     setVideosArray(data);
   };
 
