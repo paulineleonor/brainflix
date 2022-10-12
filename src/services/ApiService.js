@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "https://project-2-api.herokuapp.com/videos";
+const API_URL = "http://localhost:8080/videos";
 const apiKey = "?api_key=26689ce2-c1a8-4056-af4e-6d835c87e633";
 
 const ApiService = {
@@ -26,21 +26,21 @@ const ApiService = {
       comment: event.target.comment.value,
     };
 
-    await axios.post(
-      `${API_URL}/${currentVideo.id}/comments/${apiKey}`,
-      newComment
-    );
+    await axios.post(`${API_URL}/${currentVideo.id}/comments`, newComment);
 
     event.target.reset();
     setInitialState(currentVideo.id);
   },
 
-  deleteComment: async (currentVideo, comment, setInitialState) => {
+  deleteComment: async (currentVideo, comment, getVideos) => {
     const commentId = comment.id;
-    await axios.delete(
-      `${API_URL}/${currentVideo.id}/comments/${commentId}/${apiKey}`
-    );
-    setInitialState(currentVideo.id);
+    await axios.delete(`${API_URL}/${currentVideo.id}/comments/${commentId}`);
+    getVideos(currentVideo.id);
+  },
+
+  updateLikes: async (currentVideo, getVideos) => {
+    await axios.put(`${API_URL}/${currentVideo.id}/likes`);
+    getVideos();
   },
 };
 

@@ -10,7 +10,10 @@ const VideoInfo = (props) => {
     <section className="video-info">
       <div className="video-info__wrapper">
         <div className="video-info__container">
-          <VideoDetails currentVideo={props.currentVideo} />
+          <VideoDetails
+            currentVideo={props.currentVideo}
+            likeHandler={props.likeHandler}
+          />
           <Form
             currentVideo={props.currentVideo}
             getVideoDetails={props.getVideoDetails}

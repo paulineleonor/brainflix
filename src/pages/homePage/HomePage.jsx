@@ -17,10 +17,11 @@ const HomePage = () => {
 
   // Retrieve all video data from API and set current video
   const getVideos = async (id) => {
-    const { data } = await axios.get(
-      `https://project-2-api.herokuapp.com/videos/?api_key=26689ce2-c1a8-4056-af4e-6d835c87e633`
-    );
+    const { data } = await axios.get(`http://localhost:8080/videos`);
     setSideVideos(data);
+
+    console.log(data);
+    console.log(data[0]);
 
     const whichID = () => {
       if (location.pathname !== "/") {
@@ -30,9 +31,14 @@ const HomePage = () => {
       }
     };
 
+    console.log(whichID());
+
     let selectedVideo = await axios.get(
-      `https://project-2-api.herokuapp.com/videos/${whichID()}?api_key=26689ce2-c1a8-4056-af4e-6d835c87e633`
+      `http://localhost:8080/videos/${whichID()}`
     );
+
+    console.log(selectedVideo);
+    console.log(selectedVideo.data);
 
     selectedVideo.data.comments.sort((a, b) =>
       a.timestamp < b.timestamp ? 1 : -1
@@ -52,6 +58,11 @@ const HomePage = () => {
       </div>
     );
   }
+
+  // Increase likes
+  const likeHandler = async (currentVideo, getVideos) => {
+    ApiService.updateLikes(currentVideo, getVideos);
+  };
 
   // Handles new comment submission, checks for form errors and rerenders list of comments
   const submitHandler = async (event) => {
@@ -81,6 +92,7 @@ const HomePage = () => {
         deleteHandler={deleteHandler}
         formHasError={formHasError}
         handleFormChange={handleFormChange}
+        likeHandler={likeHandler}
       />
     </>
   );

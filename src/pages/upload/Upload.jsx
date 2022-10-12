@@ -1,3 +1,4 @@
+import axios from "axios";
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Image from "../../assets/Images/Upload-video-preview.jpg";
@@ -10,7 +11,31 @@ const Upload = () => {
   const navigate = useNavigate();
 
   // checks for valid input, sets states, and navigates to homepage after 3 secs
-  const handlePublish = (e) => {
+  // const handlePublish = (e) => {
+  //   e.preventDefault();
+
+  //   if (!e.target.description.value && !e.target.title.value) {
+  //     setTitleHasError(true);
+  //     setDescriptionHasError(true);
+  //     return;
+  //   } else if (!e.target.description.value) {
+  //     setDescriptionHasError(true);
+  //     return;
+  //   } else if (!e.target.title.value) {
+  //     setTitleHasError(true);
+  //     return;
+  //   }
+
+  //   setTitleHasError(false);
+  //   setDescriptionHasError(false);
+  //   setShowMessage(true);
+
+  //   setTimeout(() => {
+  //     navigate("/");
+  //   }, 3000);
+  // };
+
+  const postVideo = async (e) => {
     e.preventDefault();
 
     if (!e.target.description.value && !e.target.title.value) {
@@ -25,10 +50,18 @@ const Upload = () => {
       return;
     }
 
+    const newVideo = {
+      title: e.target.title.value,
+      description: e.target.description.value,
+    };
+
+    await axios.post("http://localhost:8080/videos/", newVideo);
+
     setTitleHasError(false);
     setDescriptionHasError(false);
     setShowMessage(true);
 
+    e.target.reset();
     setTimeout(() => {
       navigate("/");
     }, 3000);
@@ -52,7 +85,7 @@ const Upload = () => {
     <section className="upload">
       <div className="upload__container">
         <h1 className="upload__title">Upload Video</h1>
-        <form className="upload__form" onSubmit={(e) => handlePublish(e)}>
+        <form className="upload__form" onSubmit={(e) => postVideo(e)}>
           <section className="upload__form-wrapper">
             <div className="upload__form-container">
               <h2 className="upload__form-title">Video thumbnail</h2>
