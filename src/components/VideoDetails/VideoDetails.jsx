@@ -15,6 +15,7 @@ const VideoDetails = ({
     comments,
     id,
   },
+  likeHandler,
 }) => {
   const date = convertDate(timestamp);
 
@@ -39,8 +40,8 @@ const VideoDetails = ({
             <img
               src={LikeIcon}
               alt="A heart icon"
-              className="videoDetails__icon"
-              // onClick={() => likeHandler({ id })}
+              className="videoDetails__icon videoDetails__icon--cursor"
+              onClick={() => likeHandler(id)}
             />
             <p className="videoDetails__number">{likes}</p>
           </div>

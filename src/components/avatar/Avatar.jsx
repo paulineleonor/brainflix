@@ -1,10 +1,10 @@
 import React from "react";
 import "./Avatar.scss";
 
-const Avatar = (props) => {
+const Avatar = ({ avatarClass, imageClass }) => {
   return (
-    <div className={props.avatarClass}>
-      <div className={props.imageClass}></div>
+    <div className={avatarClass}>
+      <div className={imageClass}></div>
     </div>
   );
 };

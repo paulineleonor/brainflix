@@ -1,19 +1,19 @@
 import { useNavigate } from "react-router-dom";
 import "./Button.scss";
 
-const Button = (props) => {
+const Button = ({ buttonClass, willRedirect, destination, buttonAction }) => {
   const navigate = useNavigate();
 
   return (
     <button
-      className={props.buttonClass}
+      className={buttonClass}
       onClick={() => {
-        if (props.willRedirect) {
-          navigate(props.destination);
+        if (willRedirect) {
+          navigate(destination);
         }
       }}
     >
-      {props.buttonAction}
+      {buttonAction}
     </button>
   );
 };

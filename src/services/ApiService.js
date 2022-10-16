@@ -1,11 +1,10 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:8080/videos";
-const apiKey = "?api_key=26689ce2-c1a8-4056-af4e-6d835c87e633";
+export const API_URL = `${process.env.REACT_APP_BACKEND_URL}/videos`;
 
 const ApiService = {
   getVideos: async () => {
-    return axios.get(`${API_URL}/${apiKey}`);
+    return axios.get(`${API_URL}`);
   },
 
   createComment: async (
@@ -14,33 +13,45 @@ const ApiService = {
     setFormHasError,
     setInitialState
   ) => {
-    event.preventDefault();
+    try {
+      event.preventDefault();
 
-    if (!event.target.comment.value) {
-      setFormHasError(true);
-      return;
+      if (!event.target.comment.value) {
+        setFormHasError(true);
+        return;
+      }
+
+      const newComment = {
+        name: "Mohan Muruge",
+        comment: event.target.comment.value,
+      };
+
+      await axios.post(`${API_URL}/${currentVideo.id}/comments`, newComment);
+
+      event.target.reset();
+      setInitialState(currentVideo.id);
+    } catch (error) {
+      alert("Error, cannot post comment");
     }
-
-    const newComment = {
-      name: "Mohan Muruge",
-      comment: event.target.comment.value,
-    };
-
-    await axios.post(`${API_URL}/${currentVideo.id}/comments`, newComment);
-
-    event.target.reset();
-    setInitialState(currentVideo.id);
   },
 
   deleteComment: async (currentVideo, comment, getVideos) => {
-    const commentId = comment.id;
-    await axios.delete(`${API_URL}/${currentVideo.id}/comments/${commentId}`);
-    getVideos(currentVideo.id);
+    try {
+      const commentId = comment.id;
+      await axios.delete(`${API_URL}/${currentVideo.id}/comments/${commentId}`);
+      getVideos(currentVideo.id);
+    } catch (error) {
+      alert("Error, cannot delete comment");
+    }
   },
 
   updateLikes: async (currentVideo, getVideos) => {
-    await axios.put(`${API_URL}/${currentVideo.id}/likes`);
-    getVideos();
+    try {
+      await axios.put(`${API_URL}/${currentVideo}/likes`);
+      getVideos(currentVideo);
+    } catch (error) {
+      alert("Error, cannot like video");
+    }
   },
 };
 

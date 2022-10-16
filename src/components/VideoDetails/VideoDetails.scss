@@ -88,6 +88,10 @@
 
   &__icon {
     margin-right: 1rem;
+
+    &--cursor {
+      cursor: pointer;
+    }
   }
 
   &__description {

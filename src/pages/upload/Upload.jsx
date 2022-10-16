@@ -10,31 +10,6 @@ const Upload = () => {
   const [titleHasError, setTitleHasError] = useState(false);
   const navigate = useNavigate();
 
-  // checks for valid input, sets states, and navigates to homepage after 3 secs
-  // const handlePublish = (e) => {
-  //   e.preventDefault();
-
-  //   if (!e.target.description.value && !e.target.title.value) {
-  //     setTitleHasError(true);
-  //     setDescriptionHasError(true);
-  //     return;
-  //   } else if (!e.target.description.value) {
-  //     setDescriptionHasError(true);
-  //     return;
-  //   } else if (!e.target.title.value) {
-  //     setTitleHasError(true);
-  //     return;
-  //   }
-
-  //   setTitleHasError(false);
-  //   setDescriptionHasError(false);
-  //   setShowMessage(true);
-
-  //   setTimeout(() => {
-  //     navigate("/");
-  //   }, 3000);
-  // };
-
   const postVideo = async (e) => {
     e.preventDefault();
 

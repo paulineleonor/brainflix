@@ -4,8 +4,8 @@ import { dynamicTimestamp } from "../../utils/dates.mjs";
 import Avatar from "../Avatar/Avatar";
 import "./Comments.scss";
 
-const Comments = (props) => {
-  const comments = props.video.comments;
+const Comments = ({ video, deleteHandler }) => {
+  const comments = video.comments;
 
   const commentsList = comments.map((comment, i) => (
     <article className="comment" key={i}>
@@ -20,11 +20,10 @@ const Comments = (props) => {
         </div>
         <p className="comment__copy">{comment.comment}</p>
         <div className="comment__delete">
-          {" "}
           <img
             src={DeleteIcon}
             alt="A bin icon"
-            onClick={() => props.deleteHandler(comment)}
+            onClick={() => deleteHandler(comment)}
             className="comment__icon"
           />
         </div>

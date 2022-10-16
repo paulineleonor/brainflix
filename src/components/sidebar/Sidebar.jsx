@@ -2,19 +2,11 @@ import React from "react";
 import SideBarVideo from "../SideBarVideo/SideBarVideo";
 import "./Sidebar.scss";
 
-const Sidebar = (props) => {
-  const filteredVideos = props.videos.filter(
-    (video) => video.id !== props.currentVideoId
-  );
+const Sidebar = ({ videos, currentVideoId }) => {
+  const filteredVideos = videos.filter((video) => video.id !== currentVideoId);
 
   const sidebarContent = filteredVideos.map((video) => {
-    return (
-      <SideBarVideo
-        key={video.id}
-        video={video}
-        sidebarClickHandler={props.sidebarClickHandler}
-      />
-    );
+    return <SideBarVideo key={video.id} video={video} />;
   });
 
   return (

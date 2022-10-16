@@ -5,32 +5,31 @@ import Sidebar from "../Sidebar/Sidebar";
 import VideoDetails from "../VideoDetails/VideoDetails";
 import "./VideoInfo.scss";
 
-const VideoInfo = (props) => {
+const VideoInfo = ({
+  currentVideo,
+  likeHandler,
+  getVideoDetails,
+  submitHandler,
+  formHasError,
+  handleFormChange,
+  deleteHandler,
+  videos,
+}) => {
   return (
     <section className="video-info">
       <div className="video-info__wrapper">
         <div className="video-info__container">
-          <VideoDetails
-            currentVideo={props.currentVideo}
-            likeHandler={props.likeHandler}
-          />
+          <VideoDetails currentVideo={currentVideo} likeHandler={likeHandler} />
           <Form
-            currentVideo={props.currentVideo}
-            getVideoDetails={props.getVideoDetails}
-            submitHandler={props.submitHandler}
-            formHasError={props.formHasError}
-            handleFormChange={props.handleFormChange}
+            currentVideo={currentVideo}
+            getVideoDetails={getVideoDetails}
+            submitHandler={submitHandler}
+            formHasError={formHasError}
+            handleFormChange={handleFormChange}
           />
-          <Comments
-            video={props.currentVideo}
-            deleteHandler={props.deleteHandler}
-          />
+          <Comments video={currentVideo} deleteHandler={deleteHandler} />
         </div>
-        <Sidebar
-          currentVideoId={props.currentVideo.id}
-          videos={props.videos}
-          sidebarClickHandler={props.sidebarClickHandler}
-        />
+        <Sidebar currentVideoId={currentVideo.id} videos={videos} />
       </div>
     </section>
   );

@@ -4,7 +4,7 @@ import { useLocation, useParams } from "react-router-dom";
 import { BounceLoader } from "react-spinners";
 import Hero from "../../components/Hero/Hero";
 import VideoInfo from "../../components/VideoInfo/VideoInfo";
-import ApiService from "../../services/ApiService";
+import ApiService, { API_URL } from "../../services/ApiService";
 import "./HomePage.scss";
 
 const HomePage = () => {
@@ -17,34 +17,28 @@ const HomePage = () => {
 
   // Retrieve all video data from API and set current video
   const getVideos = async (id) => {
-    const { data } = await axios.get(`http://localhost:8080/videos`);
-    setSideVideos(data);
+    try {
+      const { data } = await axios.get(`${API_URL}`);
+      setSideVideos(data);
 
-    console.log(data);
-    console.log(data[0]);
+      const whichID = () => {
+        if (location.pathname !== "/") {
+          return id;
+        } else {
+          return data[0].id;
+        }
+      };
 
-    const whichID = () => {
-      if (location.pathname !== "/") {
-        return id;
-      } else {
-        return data[0].id;
-      }
-    };
+      let selectedVideo = await axios.get(`${API_URL}/${whichID()}`);
 
-    console.log(whichID());
+      selectedVideo.data.comments.sort((a, b) =>
+        a.timestamp < b.timestamp ? 1 : -1
+      );
 
-    let selectedVideo = await axios.get(
-      `http://localhost:8080/videos/${whichID()}`
-    );
-
-    console.log(selectedVideo);
-    console.log(selectedVideo.data);
-
-    selectedVideo.data.comments.sort((a, b) =>
-      a.timestamp < b.timestamp ? 1 : -1
-    );
-
-    setCurrentVideo(selectedVideo.data);
+      setCurrentVideo(selectedVideo.data);
+    } catch (error) {
+      alert("Error, data cannot be retrieved");
+    }
   };
 
   useEffect(() => {
@@ -60,7 +54,7 @@ const HomePage = () => {
   }
 
   // Increase likes
-  const likeHandler = async (currentVideo, getVideos) => {
+  const likeHandler = async (currentVideo) => {
     ApiService.updateLikes(currentVideo, getVideos);
   };
 
